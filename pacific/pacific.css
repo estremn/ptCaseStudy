@@ -1,3 +1,15 @@
+header,
+main,
+nav,
+footer,
+figure,
+figcaption,
+aside,
+section,
+article {
+    display: block;
+}
+
 body {
     background-color: #4F6D93;
     background: linear-gradient(to bottom, #FFFFFF, #4F6D93);
@@ -31,6 +43,11 @@ nav ul {
     font-size: 1.2em;
 }
 
+nav a {
+    text-decoration: none;
+    transition: color 3s ease-out;
+}
+
 nav a:link {
     color: #000033;
 }
@@ -43,16 +60,11 @@ nav a:hover {
     color: #FFFFFF;
 }
 
-nav a {
-    text-decoration: none;
-}
-
 main {
     background-color: #FFFFFF;
     margin-left: 190px;
     padding: 1px 20px 20px;
     padding-left: 30px;
-    display: block;
 }
 
 h1 {
@@ -79,6 +91,55 @@ dt {
     color: #000033;
 }
 
+video,
+embed {
+    float: right;
+    padding-left: 20px;
+}
+
+label {
+    float: left;
+    display: block;
+    text-align: right;
+    width: 120px;
+    padding-right: 1em;
+}
+
+input,
+textarea {
+    display: block;
+    margin-bottom: 20px;
+}
+
+table {
+    border: 1px;
+    border-color: #3399CC;
+    width: 80%;
+    border-spacing: 0;
+}
+
+td,
+th {
+    padding: 5px;
+    border: 1px;
+    border-color: #3399CC;
+}
+
+td {
+    text-align: center;
+}
+
+tr:nth-of-type(odd) {
+    background-color: #F5FAFC;
+}
+
+figure {
+    position: absolute;
+    left: 280px;
+    text-align: center;
+    opacity: .25;
+}
+
 footer {
     padding: 20px;
     font-size: 75%;
@@ -87,11 +148,16 @@ footer {
     text-align: center;
     margin-left: 190px;
     background-color: #FFFFFF;
+    float: none;
 }
 
 .resort {
     color: #5C7FA3;
     font-weight: bold;
+}
+
+.text {
+    text-align: left;
 }
 
 #wrapper {
@@ -102,6 +168,53 @@ footer {
     max-width: 2048px;
     box-shadow: 3px 3px #333333;
     background-color: #90C7E3;
+}
+
+input [type="submit"] {
+    margin-left: 130px;
+}
+
+#gallery {
+    position: relative;
+    height: 200px;
+    text-align: left;
+    color: black;
+}
+
+#gallery ul {
+    width: 300px;
+    list-style: none;
+}
+
+#gallery li {
+    display: inline;
+    float: left;
+    padding: 10px;
+}
+
+#gallery img {
+    border: none;
+}
+
+#gallery a {
+    text-decoration: none;
+    color: inherit;
+    font-style: italic;
+}
+
+#gallery span {
+    position: absolute;
+    opacity: 0;
+    left: -1000px;
+    transition: opacity 1s ease-in-out;
+}
+
+#gallery a:hover span {
+    position: absolute;
+    left: 320px;
+    top: 16px;
+    text-align: center;
+    opacity: 1;
 }
 
 #homehero {
@@ -127,4 +240,112 @@ footer {
 
 #contact {
     font-size: 90%;
+}
+
+#mobile {
+    display: none;
+}
+
+#desktop {
+    display: inline;
+}
+
+
+/*Tablet*/
+
+@media only screen and (max-width: 64em) {
+    body {
+        margin: 0;
+        background-color: #FFFFFF;
+    }
+    #wrapper {
+        min-width: 0;
+        width: auto;
+        box-shadow: none;
+    }
+    main {
+        margin-left: 0;
+    }
+    nav {
+        float: none;
+        width: auto;
+        text-align: center;
+        padding: .5em;
+    }
+    nav li {
+        display: inline;
+        padding: .25em .75em .25em .75em;
+    }
+    #homehero,
+    #yurthero,
+    #trailhero {
+        margin-left: 0;
+        height: 200px;
+    }
+    footer {
+        margin-left: 0;
+    }
+}
+
+
+/*Mobile*/
+
+@media only screen and (max-width: 37.5em) {
+    header {
+        padding-top: 1em;
+    }
+    body {
+        margin: 0;
+        background-color: #FFFFFF;
+    }
+    #wrapper {
+        min-width: 0;
+        width: auto;
+        box-shadow: none;
+    }
+    main {
+        margin-left: 0;
+        padding: .1em 1em .1em 1em;
+        font-size: 90%;
+    }
+    h1 {
+        font-size: 1.5em;
+    }
+    nav {
+        float: none;
+        width: auto;
+        text-align: center;
+        padding: .5em;
+        padding: 0;
+    }
+    nav li {
+        display: inline;
+        padding: .25em .75em .25em .75em;
+        display: block;
+    }
+    label {
+        float: none;
+        text-align: left;
+    }
+    input [type="submit"] {
+        margin-left: 0;
+    }
+    #homehero,
+    #yurthero,
+    #trailhero,
+    #gallery {
+        margin-left: 0;
+        height: 0;
+        background-image: none;
+        display: none;
+    }
+    #mobile {
+        display: inline;
+    }
+    #desktop {
+        display: none;
+    }
+    footer {
+        margin-left: 0;
+    }
 }
